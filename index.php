@@ -279,6 +279,7 @@
     usarse pero gastara gasolina y una ves que su tanque este vacio se va ha apagar.
     */
     //dentro de la interfaz simpre debe definir los metodos de tipo public 
+    /*
     interface Auto{//creamos una interface con el nombre auto
         //metodos
         public function encender();
@@ -348,12 +349,10 @@
     $obj->encender();
     $obj->usar(350);
     $obj->estado();
+    */
+?>
+
+<?php 
+    //Clase y metodos abstractos
     
-
-
-
-
-
-
-
 ?>
