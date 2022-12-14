@@ -354,5 +354,62 @@
 
 <?php 
     //Clase y metodos abstractos
-    //hola
+    /*Una clase abstracta tiene por objetivo agrupar atributos y métodos que luego serán heredados por otras subclases
+    las clases definidas como abstractas no se pueden intanciar y cualquier clase que contiene al menos un metodos abstracto
+    debe ser definida como tal. Los métodos definidos como adbtractos simplemente declaran la firma del metodos, pero
+    no pueden definir la implementación   
+    */
+
+    //definimos una clase abstracta 
+    /*abstract class Molde{
+        //atributos 
+
+        //Definimos metodos abstractos metodos
+        abstract public function ingresagarNombre($nombre);
+        abstract public function obtenerNombre();
+    }
+
+    class Persona extends Molde{
+        //atributos
+
+        //metodos
+        //Se deben implementar los metodos abstractos de la clase Molde
+        //podemos agregar parametros obcionales al metodos ingresarNombre sin importar que de la clase original solo tenga un parametro
+        public function ingresagarNombre($nombre, $username = " cubo14 "){
+         $this->nombre = $nombre . $username;//concatenamos el valor de $username
+        }
+        public function obtenerNombre(){
+            echo $this->nombre;
+        }
+    }
+
+    $persona = new Persona();
+    $persona->ingresagarNombre("jesus garcia");
+    $persona->obtenerNombre();
+    */
 ?>
+
+<?php 
+    //Autoload
+    
+    //crear una caerpta llamada clases dentro de la carpeta crear dos archivos persona.php  y auto.php
+    /*
+    function autoload($clase){
+        include "clases/". $clase . ".php";
+    }
+    //Registra las funciones dadas como implementación de __autoload
+    spl_autoload_register('autoload');
+    
+    /*llamamos a la clase y su metodo sin que exista la herencia entre clases
+    solo podemos llamar a metodos de tipo static    
+    */
+//    Persona::mostrar("hola personas del mundo <br>");
+//   Auto::mostrar("Hola mundo");
+?>
+
+<?php 
+    //Traits
+    
+
+?>
+
