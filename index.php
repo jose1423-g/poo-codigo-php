@@ -1,4 +1,30 @@
 <?php 
+    //namespace VIdeo 12
+    //crear auna carpeta con el nombre api y dentro de la carpeta crear las carpetas models y controllers
+    //dentro de models crear el archivo persona.php
+    //dentro de controllers crea el archivo personascontrollers.php
+
+    //autoload
+    spl_autoload_register(function($clase){
+        //creamos una ruta para las clases
+        $ruta= "api/". str_replace("\\", "/", $clase) .".php";
+        echo $ruta;
+        if (is_readable($ruta)) {//si el archivo es leible se incluira en caso contrario nos madara un mensaje
+            require_once $ruta;
+        }else{
+            echo "El archivo no existe";
+        }
+    });
+
+    //dentro del archivo index.php 
+    //require_once "api/models/persona.php";
+    //require_once "api/controllers/personacontrollers.php";
+    Models\Persona::hola();
+    Controllers\Personacontrollers::hola();
+
+?>
+
+<?php 
     /*clases objetos
     class Persona{ //Definimos una clase con el nombre de persona 
         //Atributos
@@ -409,7 +435,38 @@
 
 <?php 
     //Traits
-    
+    /*
+    //creamos un trait
+    trait Persona{
+        //un tarit puede contener atributos y metodos
+        //atributos 
+        public $nombre;
+        //metodos
+        public function mostrarNombre(){
+            echo $this->nombre;
+        }
+        //podemos crear metodos abstractos
+        abstract function asignarNombre($nombre);
 
+    }
+    //declaramos un segundo trait con el nombre Trabajador
+    trait Trabajador{
+        protected function saludo(){
+            echo "hola buenos días";
+        }
+    }
+    //creamos una clase usuario
+    class Usuario{
+        //llamamos al trait Persona
+        use Persona, Trabajador;//podemos llamar multiples trait separando con una coma 
+        public function asignarNombre($nombre){
+            $this->nombre = $nombre . self::saludo();
+        }        
+    }
+    //creamos el objeto de la clase
+    $user = new Usuario();
+    $user->asignarNombre("juan villa");
+    $user->mostrarNombre();
+    */
 ?>
 
