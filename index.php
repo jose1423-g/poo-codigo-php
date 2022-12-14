@@ -10,7 +10,7 @@
         $ruta= "api/". str_replace("\\", "/", $clase) .".php";
         echo $ruta;
         if (is_readable($ruta)) {//si el archivo es leible se incluira en caso contrario nos madara un mensaje
-            require_once $ruta;
+            require_once $ruta;//requiere el archivo una vez en el index
         }else{
             echo "El archivo no existe";
         }
