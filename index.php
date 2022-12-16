@@ -3,7 +3,7 @@
     //crear auna carpeta con el nombre api y dentro de la carpeta crear las carpetas models y controllers
     //dentro de models crear el archivo persona.php
     //dentro de controllers crea el archivo personascontrollers.php
-
+    /*
     //autoload
     spl_autoload_register(function($clase){
         //creamos una ruta para las clases
@@ -21,7 +21,7 @@
     //require_once "api/controllers/personacontrollers.php";
     Models\Persona::hola();
     Controllers\Personacontrollers::hola();
-
+    */
 ?>
 
 <?php 
@@ -470,3 +470,14 @@
     */
 ?>
 
+<?php 
+    //crear un archivo .htaccess y poner esto 
+    /*
+        RewriteEngine On 
+        RewriteCond %(REQUEST_FILENAME) !-d
+        RewriteCond %(REQUEST_FILENAME) !-f
+        RewriteCond %(REQUEST_FILENAME) !-l
+        RewriteRule  ^(.+)$ index.php?url=$1 [QSA,L]
+    */
+    
+?>
